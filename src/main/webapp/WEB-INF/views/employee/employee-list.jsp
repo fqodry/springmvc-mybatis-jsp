@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML">
 <html lang="id">
@@ -27,7 +28,28 @@
                                 <th>Hash Password (Bcrypt/md5)</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <c:choose>
+                                <c:when test="${empty listEmployee}">
+                                    <tr>
+                                        <td>no employee data.</td>
+                                    </tr>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:forEach items="${listEmployee}" var="employee" varStatus="count">
+                                        <tr>
+                                            <td>${count.index+1}</td>
+                                            <td>EMP${employee.id}</td>
+                                            <td>${employee.firstname} ${employee.lastname}</td>
+                                            <td>${employee.username}</td>
+                                            <td>${employee.dateOfBirth}</td>
+                                            <td>${employee.email}</td>
+                                            <td>${employee.password}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:otherwise>
+                            </c:choose>
+                        </tbody>
                     </table>
                 </div>
             </div>

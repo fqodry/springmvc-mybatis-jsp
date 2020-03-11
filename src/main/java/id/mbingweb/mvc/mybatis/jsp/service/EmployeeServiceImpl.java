@@ -2,6 +2,7 @@ package id.mbingweb.mvc.mybatis.jsp.service;
 
 import id.mbingweb.mvc.mybatis.jsp.mapper.EmployeeMapper;
 import id.mbingweb.mvc.mybatis.jsp.model.Employee;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeMapper employeeMapper;
+    
+    @Override
+    public List<Employee> getAllEmployee() {
+        return employeeMapper.getAllEmployee();
+    }
     
     @Override
     @Transactional
