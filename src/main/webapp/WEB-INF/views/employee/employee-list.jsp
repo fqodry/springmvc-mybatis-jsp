@@ -16,6 +16,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>Employee Table</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="<c:url value="/employee/add" />" class="btn btn-outline-primary" role="button">Add</a>
+                        </div>
+                    </div>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -32,7 +37,7 @@
                             <c:choose>
                                 <c:when test="${empty listEmployee}">
                                     <tr>
-                                        <td>no employee data.</td>
+                                        <td colspan="7">no employee data.</td>
                                     </tr>
                                 </c:when>
                                 <c:otherwise>
