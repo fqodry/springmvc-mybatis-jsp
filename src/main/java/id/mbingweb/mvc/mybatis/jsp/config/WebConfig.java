@@ -3,6 +3,7 @@ package id.mbingweb.mvc.mybatis.jsp.config;
 import com.zaxxer.hikari.HikariDataSource;
 import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;

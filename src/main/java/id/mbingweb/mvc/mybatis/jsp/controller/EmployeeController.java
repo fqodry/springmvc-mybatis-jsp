@@ -19,7 +19,6 @@ public class EmployeeController {
     public String list(Model model) {
         List<Employee> listEmployee = employeeService.getAllEmployee();
         model.addAttribute("listEmployee", listEmployee);
-        System.out.println("hello=" + listEmployee);
         
         return "/employee/employee-list";
     }
